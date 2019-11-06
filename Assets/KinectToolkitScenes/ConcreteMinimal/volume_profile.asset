@@ -16,13 +16,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   skyAmbientMode:
     m_OverrideState: 0
     m_Value: 0
   fogType:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,11 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
   m_Name: HDRISky
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
-    m_Value: 360
+    m_Value: 0
     min: 0
     max: 360
   skyIntensityMode:
@@ -62,14 +62,14 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.89
   multiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.65
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 5.2847676
+    m_Value: 4.7582912
     min: 0
   desiredLuxValue:
     m_OverrideState: 0
@@ -86,4 +86,4 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 0
-    m_Value: {fileID: 8900000, guid: ad037629c2344470a9919791ac1eb76a, type: 3}
+    m_Value: {fileID: 8900000, guid: a949b1cfb5b394c8a9b61340465463b3, type: 3}
