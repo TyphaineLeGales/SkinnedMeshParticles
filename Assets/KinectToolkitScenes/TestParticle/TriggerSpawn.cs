@@ -1,36 +1,25 @@
-﻿// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.VFX;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
-// public class TriggerSpawn : MonoBehaviour
+public class TriggerSpawn : MonoBehaviour
+{
+    [SerializeField] Camera _camera = null;
+    [SerializeField] VisualEffect _vfx = null;
+    VFXEventAttribute _attrib;
 
-  
-// {
-//       [Serialized Field] VisualEffect _vfx = null;
-//       [Serialized Field] Camera _camera = null;
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var pos = Input.mousePosition;
+            pos.z = _vfx.transform.position.z - _camera.transform.position.z;
+            pos = _camera.ScreenToWorldPoint(pos);
 
-//       VFXEventAttribute _attrib;
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-        
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         if(Input.GetMouseButtonDown(0)) {
-//             var mousePos = Input.mousePosition;
-//             mousePos.z = _vfx.transform.position - _camera.transform.position.z;
-//             mousePos = _camera.ScreenToWorldPoint(pos);
-
-//             if(_attrib == null) _vfx.CreateVFXEventAttribute();
-//             _attrib.setVector3('position', pos);
-
-//             _vfx.SendEvent("onManualSpawn", _attrib);
-
-//         }
-        
-//     }
-// }
+            if (_attrib == null) _attrib = _vfx.CreateVFXEventAttribute();
+            _attrib.SetVector3("position", pos);
+            _vfx.SendEvent("Start", _attrib);
+        }
+    }
+}
